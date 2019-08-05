@@ -7,6 +7,7 @@ class TodoForm extends React.Component {
     this.state = {
       term: ""
     };
+    console.log("TODO FORM", this.props);
   }
 
   handleChange = e => {
@@ -34,7 +35,7 @@ class TodoForm extends React.Component {
             value={this.state.term}
           />
           <button>Add Todo</button>
-          <button>Clear Completed</button>
+          <button onClick={this.props.deleteCompleted}>Clear Completed</button>
         </form>
       </>
     );
