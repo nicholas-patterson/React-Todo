@@ -37,6 +37,18 @@ class App extends React.Component {
     });
   };
 
+  addItem = item => {
+    const newItem = {
+      task: item,
+      id: Date.now(),
+      completed: false
+    };
+
+    this.setState({
+      todos: [...this.state.todos, newItem]
+    });
+  };
+
   render() {
     return (
       <div>
@@ -45,7 +57,7 @@ class App extends React.Component {
           todos={this.state.todos}
           toggleCompleted={this.toggleCompleted}
         />
-        <TodoForm />
+        <TodoForm addItem={this.addItem} />
       </div>
     );
   }
