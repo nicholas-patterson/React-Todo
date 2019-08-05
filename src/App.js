@@ -1,24 +1,16 @@
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
+import Container from "@material-ui/core/Container";
+import Header from "./components/Header";
+import "./components/TodoComponents/Todo.css";
 
 class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      todos: [
-        {
-          task: "Organize Garage",
-          id: 1528817077286,
-          completed: false
-        },
-        {
-          task: "Bake Cookies",
-          id: 1528817084358,
-          completed: false
-        }
-      ]
+      todos: []
     };
   }
 
@@ -57,17 +49,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList
-          todos={this.state.todos}
-          toggleCompleted={this.toggleCompleted}
-        />
-        <TodoForm
-          addItem={this.addItem}
-          deleteCompleted={this.deleteCompleted}
-        />
-      </div>
+      <>
+        <Header />
+        <Container fixed>
+          <div className="formContainer">
+            <h2 className="title">Welcome to your Todo App!</h2>
+            <TodoList
+              todos={this.state.todos}
+              toggleCompleted={this.toggleCompleted}
+            />
+            <TodoForm
+              addItem={this.addItem}
+              deleteCompleted={this.deleteCompleted}
+            />
+          </div>
+        </Container>
+      </>
     );
   }
 }

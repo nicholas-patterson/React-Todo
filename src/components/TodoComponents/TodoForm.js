@@ -1,4 +1,5 @@
 import React from "react";
+import "./TodoForm.css";
 
 class TodoForm extends React.Component {
   constructor() {
@@ -7,7 +8,6 @@ class TodoForm extends React.Component {
     this.state = {
       term: ""
     };
-    console.log("TODO FORM", this.props);
   }
 
   handleChange = e => {
