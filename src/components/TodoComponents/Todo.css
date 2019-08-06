@@ -1,0 +1,16 @@
+* {
+  font-size: 62.5%;
+}
+
+.formContainer {
+  width: 100%;
+  background: lightgray;
+  height: 500px;
+}
+
+.title {
+  text-align: center;
+  padding-top: 20px;
+  color: #3748ac;
+  font-size: 3rem;
+}
